@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # live-chat-app
 
 ## Project setup

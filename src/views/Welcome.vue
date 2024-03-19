@@ -11,7 +11,6 @@
 
       <SignUp></SignUp>
       <p>Already member? <span @click="showLoginForm=!showLoginForm" >Login account?</span></p>
-
     </div>
 
 
