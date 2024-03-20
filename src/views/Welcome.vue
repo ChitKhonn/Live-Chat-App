@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import SignUp from "@/views/SignUp.vue";
-import Login from "@/views/Login.vue";
+import SignUp from "@/components/SignUp.vue";
+import Login from "@/components/Login.vue";
 import {ref} from "vue";
 
 export  default  {

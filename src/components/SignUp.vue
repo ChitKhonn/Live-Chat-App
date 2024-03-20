@@ -12,25 +12,20 @@
 <script>
 import {ref} from "vue";
 import {auth} from "@/firebase/config";
+import userSignUp from "@/composables/userSignUp";
 
 export default {
   setup(){
     let displayName = ref("");
     let email = ref("");
     let password = ref("");
-    let error = ref(null);
-    let signUp = async () => {
-      try {
-        let res = await auth.createUserWithEmailAndPassword(email.value, password.value);
-        if(!res){
-          throw new Error("Couldn't create new user!!!")
-        }
-      }catch(err){
-        error.value = err.message;
-        console.log(error.value);
-      }
-    }
+    // let error = ref(null);
 
+    let {error , createAccount} = userSignUp();
+
+    let signUp = async () => {
+      await createAccount(displayName.value,email.value,password.value);
+    }
 
     return {displayName,email,password,signUp};
   }
@@ -38,7 +33,6 @@ export default {
 
 
 </script>
-
 
 
 <style scoped>
