@@ -3,22 +3,29 @@
   <form @submit.prevent="login">
     <input type="email" placeholder="email" v-model="email">
     <input type="password" placeholder="password" v-model="password">
-    <button>Sign Up</button>
+    <div v-if="error" class="error">{{error}}</div>
+    <button>Login</button>
+
   </form>
 </template>
 
 
 <script>
 import {ref} from "vue";
+import userSignUp from "@/composables/userSignUp";
+import userLogin from "@/composables/userLogin";
 export default {
   setup(){
     let email = ref("");
     let password = ref("");
-    let login=()=>{
-      console.log("Testing data " + email.value)
+
+    let {error,signIn} = userLogin();
+    let login= async ()=>{
+      let res = await signIn(email.value,password.value);
+      console.log(res.user)
     }
 
-    return {email,password,login};
+    return {email,password,login,error};
   }
 }
 
