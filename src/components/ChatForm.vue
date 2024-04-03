@@ -14,6 +14,7 @@ export  default {
         created_at:timestamp()
       }
 
+      console.log(chart)
       message.value = ""
     }
     return {message,handleSubmit};
