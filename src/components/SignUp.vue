@@ -28,7 +28,6 @@ export default {
       let res = await createAccount(displayName.value,email.value,password.value);
       if (res) {
         context.emit("enterChatroom");
-        console.log("Ok")
       }
     }
 

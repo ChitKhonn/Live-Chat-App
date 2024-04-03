@@ -33,7 +33,6 @@ export  default  {
 
     let enterChatroom=()=>{
       router.push({name:"Chatroom"});
-      console.log("Ok2")
     }
 
 
