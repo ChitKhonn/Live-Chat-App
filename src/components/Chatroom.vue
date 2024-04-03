@@ -1,11 +1,17 @@
-<script setup>
+<script>
+import  Navbar from '../components/Navbar.vue'
 
+export  default {
+  components: {Navbar},
+}
 </script>
 
 <template>
-  <h1>Chatroom page</h1>
+  <div class="container">
+    <Navbar></Navbar>
+  </div>
 </template>
 
-<style scoped>
+<style>
 
 </style>
